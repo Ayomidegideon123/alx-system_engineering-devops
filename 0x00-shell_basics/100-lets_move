@@ -1,1 +1,2 @@
-mv README.md /tmp/u
+#!/bin/bash
+mv [[:upper:]]* /tmp/u
