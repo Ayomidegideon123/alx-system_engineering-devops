@@ -1,1 +1,2 @@
-head
+#!/bin/bash
+#!/bin/bashgrep ^[a-zA-Z] /etc/ssh/sshd_config
