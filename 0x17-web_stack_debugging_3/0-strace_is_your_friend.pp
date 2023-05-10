@@ -1,9 +1,17 @@
-# strace - fixed .phpp in wp-settings.php
+#puppet manifest to rename a file and create a file
 
-exec { 'fixed-phpp':
+exec { 'fix-wordpress':
 
-  command => "sed -i 's/phpp/php/g' /var/www/html/wp-settings.php",
+  environment => ['DIR=/var/www/html/wp-settings.php',
 
-  path    => '/bin';
+                  'OLD=phpp',
+
+                  'NEW=php'],
+
+  command     => 'sudo sed -i "s/$OLD/$NEW/" $DIR',
+
+  path        => ['/usr/bin', '/bin'],
+
+  returns     => [0, 1]
 
 }
